@@ -25,7 +25,7 @@ export function getMatchedDependencies(this:MixCli,entry:string):string[]{
     if(!(pacakgeMacher instanceof RegExp)) return  []
     
     // 找出当前包的所有依赖
-    const { dependencies={},devDependencies={},peerDependencies={},optionalDependencies={},bundleDependencies={} } = getPackageJson(entry)
+    const { dependencies={},devDependencies={},peerDependencies={},optionalDependencies={},bundleDependencies={} } = getPackageJson(entry, true)
     const packageNames = [
         ...Object.keys(dependencies),
         ...Object.keys(devDependencies),
